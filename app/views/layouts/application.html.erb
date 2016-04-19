@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Event</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+ <script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places'></script>
+    <!--Icons-->
+    <script src="/assets/lumino.glyphs.js"></script>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render 'layouts/navbar' %>
+    <% if user_signed_in? %>
+        <%= render 'layouts/sidebar' %>
+    <%end%>
+    <%= yield %>
+
+
+    <script src="/assets/jquery-1.11.1.min.js"></script>
+    <script src="/assets/bootstrap.min.js"></script>
+    <script src="/assets/bootstrap-datepicker.js"></script>
+    <script>
+        $('#calendar').datepicker({
+        });
+
+        !function ($) {
+            $(document).on("click","ul.nav li.parent > a > span.icon", function(){          
+                $(this).find('em:first').toggleClass("glyphicon-minus");      
+            }); 
+            $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+        }(window.jQuery);
+
+        $(window).on('resize', function () {
+          if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+        })
+        $(window).on('resize', function () {
+          if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+        })
+    </script>   
+
+</body>
+</html>
