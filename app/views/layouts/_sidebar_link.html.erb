@@ -1,7 +1,7 @@
 <li class="<%= 'active' if request.env['PATH_INFO'] == path %>">
 	<a href="<%= path %>">
-	<i class="fa <%= icon %> fa-2">
-    	<div class="icon-bg <%= color %>"></div>
+	<svg class="glyph stroked <%= icon %>">
+	<use xlink:href="#stroked-<%= icon %>"></use>
+    </svg><%= title %></a></li>
 	</i>
-	<span class="menu-title"><%= title %></span></a>
 </li>
