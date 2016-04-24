@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FODA</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body style="padding-top:0px">
+    <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+        <div class="page-header pull-left">
+            <div class="page-title">Step 2: Optional Features</div>
+        </div>
+        <div class="clearfix">
+        </div>
+    </div>
+
+<div class="page-content">
+
+<div class="col-sm-offset-4 col-sm-4">
+<div class="panel panel-green">
+    <div class="panel-heading">Choose Your Desired Features</div>
+        <div class="panel-body pan">
+            <form name="featureForm" method="get" action="<%= fmodel_path %>" onsubmit="return checkbox();">
+                <div class="form-body pal">
+                
+                    <div class="form-group">
+                    <label>
+                        <div class="icheckbox_minimal-grey" style="position: relative;"><input name="feature1" id="f1" value="gplan" tabindex="5" type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>&nbsp; Google Planner
+                    </label>
+                    </div>
+
+                    <div class="form-group">
+                    <label>
+                        <div class="icheckbox_minimal-grey" style="position: relative;"><input name="feature2" id="f2" value="todo" tabindex="5" type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>&nbsp; Todo-List
+                    </label>
+                    </div>
+
+                    <div class="form-group">
+                    <label>
+                        <div class="icheckbox_minimal-grey" style="position: relative;"><input name="feature3" id="f3" value="chat" tabindex="5" type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>&nbsp; Chatbox
+                    </label>
+                    </div>
+
+                    <div class="form-actions text-center pal">
+                    <a href="" class="btn btn-primary">Back</a>
+                    <input type="submit"  class="btn btn-primary" value="Next">
+                    </div>
+                </div>
+            </form>
+        </div>
+</div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+    var today = new Date();
+    var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
+
+    function checkbox()
+    {
+        var gplan=document.getElementById("f1").checked;
+        var todo=document.getElementById("f2").checked;
+        var chat=document.getElementById("f3").checked;
+        if(gplan){
+            setCookie("feature1", "gplan");
+            setCookie("feature2", "no")
+            setCookie("feature3", "no");
+        }
+
+        if(todo){
+            setCookie("feature1", "no");
+            setCookie("feature2", "todo")
+            setCookie("feature3", "no");
+        }
+
+        if(chat){
+            setCookie("feature1", "no");
+            setCookie("feature2", "no")
+            setCookie("feature3", "chat");
+        }
+
+        if(gplan && todo){
+            setCookie("feature1", "gplan");
+            setCookie("feature2", "todo")
+            setCookie("feature3", "no");
+        }
+
+        if(gplan && chat){
+            setCookie("feature1", "gplan");
+            setCookie("feature2", "no")
+            setCookie("feature3", "chat");
+        }
+
+        if(todo && chat){
+            setCookie("feature1", "no");
+            setCookie("feature2", "todo")
+            setCookie("feature3", "chat");
+        }
+
+        if(gplan && todo && chat){
+            setCookie("feature1", "gplan");
+            setCookie("feature2", "todo")
+            setCookie("feature3", "chat");
+        }
+
+        if(!gplan && !todo && !chat){
+            setCookie("feature1", "no");
+            setCookie("feature2", "no")
+            setCookie("feature3", "no");
+        }          
+
+    }
+
+  // Original JavaScript code by Chirp Internet: www.chirp.com.au
+  // Please acknowledge use of this code by including this header.
+
+  function setCookie(name, value)
+  {
+    document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+  }
+
+</script>
+
+
+    <script src="/assets/jquery-1.10.2.min.js"></script>
+    <script src="/assets/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/assets/jquery-ui.js"></script>
+    <script src="/assets/bootstrap.min.js"></script>
+    <script src="/assets/bootstrap-hover-dropdown.js"></script>
+    <script src="/assets/html5shiv.js"></script>
+    <script src="/assets/respond.min.js"></script>
+    <script src="/assets/jquery.metisMenu.js"></script>
+    <script src="/assets/jquery.slimscroll.js"></script>
+    <script src="/assets/jquery.cookie.js"></script>
+    <script src="/assets/icheck.min.js"></script>
+    <script src="/assets/custom.min.js"></script>
+    <script src="/assets/jquery.menu.js"></script>
+    <script src="/assets/pace.min.js"></script>
+    <script src="/assets/holder.js"></script>
+    <script src="/assets/responsive-tabs.js"></script>
+    <script src="/assets/zabuto_calendar.min.js"></script>
+    <!--CORE JAVASCRIPT-->
+    <script src="/assets/main.js"></script>

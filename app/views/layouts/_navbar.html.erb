@@ -18,7 +18,7 @@
                                 <% if user_signed_in? %>
                                     <%= link_to( '<svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg>&nbsp'.html_safe + 'Logout', destroy_user_session_path, :method => :delete) %>
                                 <% else %>
-                                    <%= link_to('<svg class="glyph stroked key "><use xlink:href="#stroked-key"/></svg>&nbsp' + 'Login', new_user_session_path)  %>  
+                                    <%= link_to('<svg class="glyph stroked key "><use xlink:href="#stroked-key"/></svg>&nbsp'.html_safe + 'Login', new_user_session_path)  %>  
                                 <% end %>
                             </a></li>
                         </ul>

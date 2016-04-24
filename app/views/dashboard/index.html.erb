@@ -1,3 +1,78 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript">
+
+  function getCookie(name)
+  {
+    var re = new RegExp(name + "=([^;]+)");
+    var value = re.exec(document.cookie);
+    return (value != null) ? unescape(value[1]) : null;
+  }
+
+  if(feature1 = getCookie("feature1") == "gplan"){
+    if(feature2 = getCookie("feature2") == "no"){
+      if(feature3 = getCookie("feature3") == "no"){
+        $(document).ready(function(){
+            $("#todo").remove();
+            $("#chat").remove();
+        });
+  }}}
+
+  if(feature1 = getCookie("feature1") == "no"){
+    if(feature2 = getCookie("feature2") == "todo"){
+      if(feature3 = getCookie("feature3") == "no"){
+        $(document).ready(function(){
+            $("#gplan").remove();
+            $("#chat").remove();
+        });
+  }}}
+
+  if(feature1 = getCookie("feature1") == "no"){
+    if(feature2 = getCookie("feature2") == "no"){
+      if(feature3 = getCookie("feature3") == "chat"){
+        $(document).ready(function(){
+            $("#gplan").remove();
+            $("#todo").remove();
+        });
+  }}}
+
+  if(feature1 = getCookie("feature1") == "gplan"){
+    if(feature2 = getCookie("feature2") == "todo"){
+      if(feature3 = getCookie("feature3") == "no"){
+        $(document).ready(function(){
+            $("#chat").remove();
+        });
+  }}}
+
+
+  if(feature1 = getCookie("feature1") == "gplan"){
+    if(feature2 = getCookie("feature2") == "no"){
+      if(feature3 = getCookie("feature3") == "chat"){
+        $(document).ready(function(){
+            $("#todo").remove();
+        });
+  }}}
+
+  if(feature1 = getCookie("feature1") == "no"){
+    if(feature2 = getCookie("feature2") == "todo"){
+      if(feature3 = getCookie("feature3") == "chat"){
+        $(document).ready(function(){
+            $("#gplan").remove();
+        });
+  }}}
+
+  if(feature1 = getCookie("feature1") == "no"){
+    if(feature2 = getCookie("feature2") == "no"){
+      if(feature3 = getCookie("feature3") == "no"){
+        $(document).ready(function(){
+            $("#gplan").remove();
+            $("#todo").remove();
+            $("#chat").remove();
+        });
+  }}}
+
+
+</script>
+
   <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="<%= 'margin: 0' if !user_signed_in? %>">     
     
     <div class="row">
@@ -24,7 +99,7 @@
       </div>
     </div><!--/.row-->
                                     
-      <div class="col-lg-12">
+      <div id="todo" class="col-lg-12">
         <div class="panel panel-blue">
           <div class="panel-heading dark-overlay"><svg class="glyph stroked clipboard-with-paper"><use xlink:href="#stroked-clipboard-with-paper"></use></svg>To-do List</div>
           <div class="panel-body">
@@ -88,7 +163,7 @@
           }
         </script>
 
-    <div class="row">
+    <div id="gplan" class="row">
       <div class="col-lg-12">
         <div class="panel panel-default">
           <div class="panel-heading">My Planner</div>
@@ -117,7 +192,7 @@
       </div>
 
       
-      <div class="col-md-8">
+      <div id="chat" class="col-md-8">
         <div class="panel panel-default">
           <div class="panel-heading">Chatbox</div>
           <div class="panel-body">
