@@ -23,14 +23,14 @@
   <div class="col-lg-12 col-sm-offset-4" >
       <div class="col-lg-4">
           <div class="member-team">
-          <img id="a" style="display:none" src="/assets/a.png" class="img-responsive"/>
-          <img id="b" style="display:none" src="/assets/b.png" class="img-responsive"/>
-          <img id="c" style="display:none" src="/assets/c.png" class="img-responsive"/>
-          <img id="d" style="display:none" src="/assets/d.png" class="img-responsive"/>
-          <img id="e" style="display:none" src="/assets/e.png" class="img-responsive"/>
-          <img id="f" style="display:none" src="/assets/f.png" class="img-responsive"/>
-          <img id="g" style="display:none" src="/assets/g.png" class="img-responsive"/>
-          <img id="h" style="display:none" src="/assets/h.png" class="img-responsive"/>
+          <img id="a" style="display:none" src="/assets/fml1.png" class="img-responsive"/>
+          <img id="b" style="display:none" src="/assets/fml2.png" class="img-responsive"/>
+          <img id="c" style="display:none" src="/assets/fml3.png" class="img-responsive"/>
+          <img id="d" style="display:none" src="/assets/fml4.png" class="img-responsive"/>
+          <img id="e" style="display:none" src="/assets/fml5.png" class="img-responsive"/>
+          <img id="f" style="display:none" src="/assets/fml6.png" class="img-responsive"/>
+          <img id="g" style="display:none" src="/assets/fml7.png" class="img-responsive"/>
+          <img id="h" style="display:none" src="/assets/fml8.png" class="img-responsive"/>
               <h3  style="text-align:center">Your Generate Feature Modeling</h3>
               <div class="text-center pal">
                     <a href="<%= root_path %>" class="btn btn-primary">Test</a>
@@ -47,7 +47,7 @@
     var value = re.exec(document.cookie);
     return (value != null) ? unescape(value[1]) : null;
   }
-
+#fm1
   if(feature1 = getCookie("feature1") == "gplan"){
     if(feature2 = getCookie("feature2") == "no"){
       if(feature3 = getCookie("feature3") == "no"){
@@ -55,7 +55,7 @@
             $('#a').show();
         });
   }}}
-
+#fm2
   if(feature1 = getCookie("feature1") == "no"){
     if(feature2 = getCookie("feature2") == "todo"){
       if(feature3 = getCookie("feature3") == "no"){
@@ -63,7 +63,7 @@
             $('#b').toggle();
         });
   }}}
-
+#fm3
   if(feature1 = getCookie("feature1") == "no"){
     if(feature2 = getCookie("feature2") == "no"){
       if(feature3 = getCookie("feature3") == "chat"){
@@ -71,7 +71,7 @@
             $('#c').toggle();
         });
   }}}
-
+#fm4
   if(feature1 = getCookie("feature1") == "gplan"){
     if(feature2 = getCookie("feature2") == "todo"){
       if(feature3 = getCookie("feature3") == "no"){
@@ -79,8 +79,7 @@
             $('#d').toggle();
         });
   }}}
-
-
+#fm5
   if(feature1 = getCookie("feature1") == "gplan"){
     if(feature2 = getCookie("feature2") == "no"){
       if(feature3 = getCookie("feature3") == "chat"){
@@ -88,7 +87,7 @@
             $('#e').toggle();
         });
   }}}
-
+#fm6
   if(feature1 = getCookie("feature1") == "no"){
     if(feature2 = getCookie("feature2") == "todo"){
       if(feature3 = getCookie("feature3") == "chat"){
@@ -96,7 +95,7 @@
             $('#f').toggle();
         });
   }}}
-
+#fm7
   if(feature1 = getCookie("feature1") == "no"){
     if(feature2 = getCookie("feature2") == "no"){
       if(feature3 = getCookie("feature3") == "no"){
@@ -104,7 +103,7 @@
             $('g').toggle();
         });
   }}}
-
+#fm8
   if(feature1 = getCookie("feature1") == "gplan"){
     if(feature2 = getCookie("feature2") == "todo"){
       if(feature3 = getCookie("feature3") == "chat"){
